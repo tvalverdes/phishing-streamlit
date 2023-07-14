@@ -15,12 +15,12 @@ def analisis_modelo(url):
     X = data.drop(labels=['result'],axis=1)
     y = data['result'].values
     X_train, X_test, y_train, y_test = train_test_split(X, y,test_size=0.2,random_state=0)
-    #model = RandomForestClassifier(n_estimators = 29,
-    #                                  random_state = 2016,
-    #                                  min_samples_leaf = 1,)
+    model = RandomForestClassifier(n_estimators = 29,
+                                      random_state = 2016,
+                                      min_samples_leaf = 1,)
     #model.fit(X_train, y_train)
     #joblib.dump(model, 'modelo_entrenadoRF.pkl')
-    model = joblib.load("modelo_entrenadoRF.pkl")
+    model = #joblib.load("modelo_entrenadoRF.pkl")
 
     try:
         prediction = model.predict(resultado)
