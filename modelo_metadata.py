@@ -18,9 +18,6 @@ def analisis_modelo(url):
     model = RandomForestClassifier(n_estimators = 29,
                                       random_state = 2016,
                                       min_samples_leaf = 1,)
-    #model.fit(X_train, y_train)
-    #joblib.dump(model, 'modelo_entrenadoRF.pkl')
-    #model = joblib.load("modelo_entrenadoRF.pkl")
 
     try:
         prediction = model.predict(resultado)
@@ -38,19 +35,3 @@ def analisis_modelo(url):
         respuesta['mensaje'] = "Excepción en algoritmo: ",e
         print("Excepción en algoritmo")
         return respuesta
-
-#accuracy = model.score(X_test, y_test)
-    #print("Precisión del análisis :", accuracy*100,"%")
-
-    # Preprocesar el enlace ingresado por el usuario
-    #url_transformed = vectorizer.transform([url])
-
-    # Realizar la predicción
-    #print(type(url_transformed))
-
-#feature_list = list(X.columns)
-        #feature_imp = pd.Series(model.feature_importances_,index=feature_list).sort_values(ascending=False)
-        #print(feature_imp)
-
-#X = vectorizer.fit_transform(data['URL'])
-#vectorizer = CountVectorizer()
