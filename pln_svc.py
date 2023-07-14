@@ -15,8 +15,12 @@ import joblib
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 def analisis_pln(url):
     nuevo_texto = extractKeywords(url)
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    nltk.download('wordnet')
     data = pd.read_csv('data2.csv')
     data.dropna(inplace=True)
     text = data['text']
