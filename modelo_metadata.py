@@ -20,7 +20,7 @@ def analisis_modelo(url):
                                       min_samples_leaf = 1,)
     #model.fit(X_train, y_train)
     #joblib.dump(model, 'modelo_entrenadoRF.pkl')
-    model = #joblib.load("modelo_entrenadoRF.pkl")
+    #model = joblib.load("modelo_entrenadoRF.pkl")
 
     try:
         prediction = model.predict(resultado)
