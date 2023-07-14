@@ -20,9 +20,9 @@ def analisis_modelo(url):
     y = data['result'].values
     X_train, X_test, y_train, y_test = train_test_split(X, y,test_size=0.2,random_state=0)
 
-    model = joblib.load('modelo_entrenadoRF.pkl')#RandomForestClassifier(n_estimators = 29,
-                                      #random_state = 2016,
-                                      #min_samples_leaf = 1,)
+    model = RandomForestClassifier(n_estimators = 29,#joblib.load('modelo_entrenadoRF.pkl')
+                                      random_state = 2016,
+                                      min_samples_leaf = 1,)
     #model.fit(X_train, y_train)
     accuracy = model.score(X_test, y_test)
     #print("Precisión del análisis :", accuracy*100,"%")
