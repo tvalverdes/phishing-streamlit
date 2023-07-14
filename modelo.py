@@ -15,30 +15,16 @@ def analisis_modelo(url):
     df = df.dropna()
     data = df[['has-Google-Site', 'has-Tag-Manager','has-Analytics', 'has-description','has-title', 'result']]
     vectorizer = CountVectorizer()
-    #X = vectorizer.fit_transform(data['URL'])
     X = data.drop(labels=['result'],axis=1)
     y = data['result'].values
     X_train, X_test, y_train, y_test = train_test_split(X, y,test_size=0.2,random_state=0)
 
-    model = RandomForestClassifier(n_estimators = 29,#joblib.load('modelo_entrenadoRF.pkl')
+    model = RandomForestClassifier(n_estimators = 29,
                                       random_state = 2016,
                                       min_samples_leaf = 1,)
-    #model.fit(X_train, y_train)
     accuracy = model.score(X_test, y_test)
-    #print("Precisión del análisis :", accuracy*100,"%")
-
-    # Preprocesar el enlace ingresado por el usuario
-    #url_transformed = vectorizer.transform([url])
-
-    # Realizar la predicción
-    #print(type(url_transformed))
-
     try:
         prediction = model.predict(resultado)
-        #feature_list = list(X.columns)
-        #feature_imp = pd.Series(model.feature_importances_,index=feature_list).sort_values(ascending=False)
-        #print(feature_imp)
-        # Imprimir el resultado de la predicción
         if prediction[0] == 1:
             respuesta = {}
             respuesta['id'] = 11
