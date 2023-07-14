@@ -41,7 +41,6 @@ def analisis_pln(url):
     from sklearn.metrics import accuracy_score
     classifiersvm = SVC()
     classifiersvm.fit(X_train, y_train)
-    #classifiersvm = joblib.load('modelo_entrenadoSVC.pkl')
     y_predsvm = classifiersvm.predict(X_test)
     print(classification_report(y_test, y_predsvm))
     accuracysvm = accuracy_score(y_test, y_predsvm)
