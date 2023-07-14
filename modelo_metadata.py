@@ -18,6 +18,7 @@ def analisis_modelo(url):
     model = RandomForestClassifier(n_estimators = 29,
                                       random_state = 2016,
                                       min_samples_leaf = 1,)
+    model.fit(X_train, y_train)
 
     try:
         prediction = model.predict(resultado)
