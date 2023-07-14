@@ -15,21 +15,7 @@ from fuzzywuzzy import fuzz
 import re
 
 def web_indexada(website_url):
-    try:
-        op = webdriver.ChromeOptions()
-        op.add_argument('headless')
-        driver = webdriver.Chrome(options=op)
-        driver.get(f"https://www.google.com/search?q=site:{website_url}")
-        try:
-            time.sleep(1)
-            driver.find_element(By.ID,"rso")
-            return 0
-        except:
-            return 1
-        driver.close()
-    except Exception as error:
-        print(f"Error en web_indexada: {error}")
-        return 1
+    return 0
 def ssl_vigencia(url):
     parsed_url = urlparse(url).netloc
     try:
